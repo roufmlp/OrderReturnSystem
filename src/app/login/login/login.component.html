@@ -1,0 +1,64 @@
+<form class="form-signin mainContainer" [formGroup]='userDetailsForm' name="form" (submit)="LogIn()" #f="ngForm">
+  
+  <div class="input-wrap">
+    <label for="username">Username</label>
+    <input type="text" id='username' formControlName="username"
+    [ngClass]="{'invalid-input': (userDetailsForm.get('username')?.errors && userDetailsForm.get('username')?.touched || formSubmitted)}">
+    <ul class="hints"
+        *ngIf='this.userDetailsForm?.get("username")?.invalid && (this.userDetailsForm?.get("username")?.touched || formSubmitted)'>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("username")?.hasError("required")'>
+        Username Required
+      </li>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("username")?.hasError("minlength")'>
+        Minimum length must 5 characters
+      </li>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("username")?.hasError("maxlength")'>
+        Maximum length allowed is 30 characters
+      </li>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("username")?.hasError("onlyAlpabetCharsAllowed")'>
+        Special characters(e.g !@#$%^&*), spaces are not allowed
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="input-wrap">
+    <label for="password">Password</label>
+    <input type="password" id='password' formControlName="password"
+    [ngClass]="{'invalid-input': (userDetailsForm.get('password')?.errors && userDetailsForm.get('password')?.touched || formSubmitted)}">
+    <ul class="hints"
+        *ngIf='this.userDetailsForm?.get("password")?.invalid && (this.userDetailsForm?.get("password")?.touched || formSubmitted)'>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("password")?.hasError("required")'>
+        Password Required
+      </li>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("password")?.hasError("minlength")'>
+        Minimum length must 5 characters
+      </li>
+      <li class="hint" *ngIf='this.userDetailsForm?.get("password")?.hasError("maxlength")'>
+        Maximum length allowed is 255 characters
+      </li>
+    </ul>
+  </div>
+  <div class="input-wrap">
+    <button type="submit" class="buttonBox" style="margin: auto;margin-bottom:25px;width: 100%;" [disabled]='false'
+            >
+            Log In
+    </button>
+  </div>
+  <!-- <div class="action-btn-wrap">
+    <button type="submit" class="btn" [disabled]='false'
+            [ngClass]="{'btn-orange--enabled': true, 'btn-orange--disabled': false}">
+      Login
+    </button>
+  </div> -->
+  
+  <!-- <div class="action-btn-wrap">
+    <button type="submit" class="buttonBox" style="margin: auto;margin-bottom:25px;width: 100%;" [disabled]='false'
+            >
+            LogIn
+    </button>
+  </div> -->
+  
+ 
+ 
+</form>

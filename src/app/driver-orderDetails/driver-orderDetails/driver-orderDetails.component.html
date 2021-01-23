@@ -1,0 +1,49 @@
+
+  <div class="row">
+    <button (click)="goBack()" class="buttonBox" style="float: left;margin: 10px auto 10px 25px;">Go Back</button>
+    <button (click)="LogOut()" class="buttonBox" style="margin: 10px 10px 10px auto;">Log Out</button>
+  </div>
+  <div class="row margin0" style="margin-top: 25px;">
+    <div class="col-lg-4 col-sm-12 col-md-6">
+        <h4 style="font-weight: bold;">Order Details</h4>
+        <p>Customer Name: {{SelectedCustomer.CustomerName}}</p>
+        <p>Address: {{SelectedCustomer.Address}}</p>
+        <p>Phone No: {{SelectedCustomer.MobileNumber}}</p>
+        <p>Status: {{SelectedCustomer.Satus}}</p>
+        <p>Date of Purchase: {{SelectedCustomer.DateOfPurchase | date}}</p>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-lg-6 col-sm-12 col-md-6" *ngFor="let product of SelectedCustomer.ProductDetails">
+      <div class="box">
+        <div class="row">
+          <div class="col-4">
+            <div class="imageWrap">
+              <img src="assets/images/{{product.Image}}">
+            </div>
+          </div>
+          <div class="col-8">
+            <p>{{product.ProductName}}</p>
+            <p>Type: {{product.ProductType}}</p>
+            <p>Quantity: {{product.Quantity}}</p>
+            <p *ngIf="isRejected(product)" style="font-weight: bold;color: rgb(4, 85, 4);">Item Sent for Approval</p>
+            <p *ngIf="!isRejected(product) && product.Status!='New' && product.Status!='SentToDriver'" style="font-weight: bold;color:#d81818;">Rejected</p>
+            <button *ngIf="product.Status=='New'" (click)="SelectProduct(product)" class="buttonBoxRed">Return Item</button>
+            <button *ngIf="product.Status=='SentToDriver'" (click)="CollectItem(product)" class="buttonBoxRed" style="background:rgb(4, 85, 4);">Collect Item</button>
+          </div>
+          
+        </div>
+        
+        
+        <!-- <button (click)="LogOut()" class="buttonBoxRed">Return Item</button> -->
+      </div>
+    </div>
+  </div>
+
+  <div class="action-btn-wrap">
+    <button type="submit" (click)="goBack()" class="buttonBox" style="margin: auto;margin-bottom:25px;width: 100%;" [disabled]='false'
+            >
+      Done
+    </button>
+  </div>

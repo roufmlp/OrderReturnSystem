@@ -1,0 +1,2 @@
+<file-uploader [activeColor]="'orangered'" [baseColor]="'lightgray'" [content]="passportFrontImage"
+            (imageUploaded)="fileUploaded($event, 'passport1')"></file-uploader>

@@ -1,0 +1,12 @@
+
+  <div class="row">    
+    <button (click)="LogOut()" class="buttonBox" style="margin: 10px 5px 10px auto;">Log Out</button>
+  </div>
+  
+  
+  <div class="row">
+    <div class="col-lg-4 col-sm-12 col-md-6" *ngFor="let page of Pages" (click)="PageSelected(page)">
+      <button class="box">{{page.title}}</button>
+    </div>
+  </div>
+

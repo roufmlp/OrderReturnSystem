@@ -1,0 +1,40 @@
+
+<div class="row">
+  <button *ngIf="UserDetails.RoleID=='1'" (click)="goBack()" class="buttonBox" style="float: left;margin: 10px auto 10px 25px;">Go Back</button>
+  <button (click)="LogOut()" class="buttonBox" style="margin: 10px 10px 10px auto;">Log Out</button> 
+</div>
+<div class="row">
+  <div class="input-wrap" style="margin-left: 15px; margin-top: 15px;">      
+    <input type="text" id='comments' [(ngModel)]="txtSearch" (ngModelChange)="txtSearchChanged($event)" placeholder="Search keyword" style="margin: 10px;" >      
+  </div>
+</div>
+<div class="row" *ngIf="filteredCustomerDetails.length<=0">
+  <h2 class="center">0 Records Found</h2>
+</div>
+  <div class="row">
+  <ng-container *ngFor="let customer of filteredCustomerDetails">
+    <ng-container *ngFor="let products of customer.ProductDetails">   
+      <div *ngIf="products.Status=='SentToWarehouse'" class="col-lg-6 col-sm-12 col-md-6">  
+        <div class="box" (click)="BoxClicked(customer,products)">
+          <div class="row">
+            <div class="col-8">
+            <h4>Product: {{products.ProductName}}</h4>
+            <p>Type: {{products.ProductType}}</p>
+            <p>Quantity: <strong>{{products.Quantity}}</strong></p>
+            <p>Date of Purchase: <strong>{{customer.DateOfPurchase | date}}</strong></p>
+            <p>Date of Return: {{customer.DateUpdated | date}}</p>
+            <p>Submitted By: {{customer.UpdatedBy}}</p>
+            <p>Return Reason: <strong [style.color]="'red'">{{products.ReasonForReturn}}</strong></p> 
+          </div>
+            <div class="col-4">
+              <div class="imageWrap">
+                <img src="assets/images/{{products.Image}}">
+              </div>
+            </div>
+          </div>         
+      </div>
+    </div>
+    </ng-container>
+  </ng-container>
+</div>
+

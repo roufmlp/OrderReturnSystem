@@ -1,0 +1,135 @@
+<form class="form-signin" [formGroup]='newUserAccess' name="form" #f="ngForm">
+  <div class="row">
+    <button (click)="goBack()" class="buttonBox" style="float: left;margin: 10px auto 10px 25px;">Go Back</button>
+    <button (click)="LogOut()" class="buttonBox" style="margin: 10px 10px 10px auto;">Log Out</button>
+  </div>
+  <h4 style="font-weight: bold;margin-top: 25px;margin-left: 15px;">User Details</h4>
+  <div class="row margin0">    
+    <div class="col-lg-4 col-sm-12 col-md-6">        
+        <div class="input-wrap">
+          <label for="firstName">Name</label>
+          <input type="text" id='firstName' formControlName="firstName" placeholder="Full Name"
+          [ngClass]="{'invalid-input': (newUserAccess.get('firstName')?.errors && newUserAccess.get('firstName')?.touched)}">
+          <ul class="hints"
+              *ngIf='this.newUserAccess?.get("firstName")?.invalid && (this.newUserAccess?.get("firstName")?.touched || formSubmitted)'>
+            <li class="hint" *ngIf='this.newUserAccess?.get("firstName")?.hasError("required")'>
+              Required field
+            </li>
+            <li class="hint" *ngIf='this.newUserAccess?.get("firstName")?.hasError("minlength")'>
+              Minimum length must 5 characters
+            </li>
+            <li class="hint" *ngIf='this.newUserAccess?.get("firstName")?.hasError("maxlength")'>
+              Maximum length allowed is 30 characters
+            </li>
+            <li class="hint" *ngIf='this.newUserAccess?.get("firstName")?.hasError("onlyAlpabetCharsAllowed")'>
+              Special characters(e.g !@#$%^&*), numbers are not allowed
+            </li>
+          </ul>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-sm-12 col-md-6">
+      <div class="input-wrap" >
+        <label for="mobile">Moile No.</label>        
+        <input type="text" id='mobile-number' placeholder="056 XXX XXXX" formControlName="mobile"
+        allowedChars='^[0123456789][0-9]{0,9}$'
+        [ngClass]="{'invalid-input': (newUserAccess.get('mobile')?.errors && newUserAccess.get('mobile')?.touched)}">
+        <ul>
+    
+          <li *ngIf='newUserAccess.get("mobile")?.invalid && newUserAccess.get("mobile")?.touched && newUserAccess.get("mobile")?.hasError("invalidMobileFormat")'
+          style="color: #cd0000;" class="hint">
+          Mobile number should be in UAE format. e.g. 0501234567 
+        </li>
+        <li *ngIf='newUserAccess.get("mobile")?.invalid && newUserAccess.get("mobile")?.touched && newUserAccess.get("mobile")?.hasError("required")'
+        style="color: #cd0000;" class="hint">
+        Required field
+      </li>
+    </ul>
+      </div>
+    </div>
+    <div class="col-lg-4 col-sm-12 col-md-6 d-none d-lg-block d-xl-block"></div>
+
+    <div class="col-lg-4 col-sm-12 col-md-6">
+    <div class="input-wrap">
+      <label for="username">Username</label>
+      <input type="text" id='username' formControlName="username"
+      [ngClass]="{'invalid-input': (newUserAccess.get('username')?.errors && newUserAccess.get('username')?.touched)}">
+      <ul class="hints"
+          *ngIf='this.newUserAccess?.get("username")?.invalid && (this.newUserAccess?.get("username")?.touched)'>
+        <li class="hint" *ngIf='this.newUserAccess?.get("username")?.hasError("required")'>
+          Required field
+        </li>
+        <li class="hint" *ngIf='this.newUserAccess?.get("username")?.hasError("minlength")'>
+          Minimum length must 5 characters
+        </li>
+        <li class="hint" *ngIf='this.newUserAccess?.get("username")?.hasError("maxlength")'>
+          Maximum length allowed is 30 characters
+        </li>
+        <li class="hint" *ngIf='this.newUserAccess?.get("username")?.hasError("onlyAlpabetCharsAllowed")'>
+          Special characters(e.g !@#$%^&*), spaces are not allowed
+        </li>
+      </ul>
+    </div>
+  </div>
+    <div class="col-lg-4 col-sm-12 col-md-6">
+    <div class="input-wrap">
+      <label for="password">Password</label>
+      <input type="password" id='password' formControlName="password"
+      [ngClass]="{'invalid-input': (newUserAccess.get('password')?.errors && newUserAccess.get('password')?.touched)}">
+      <ul class="hints"
+          *ngIf='this.newUserAccess?.get("password")?.invalid && (this.newUserAccess?.get("password")?.touched)'>
+        <li class="hint" *ngIf='this.newUserAccess?.get("password")?.hasError("required")'>
+          Required field
+        </li>
+        <li class="hint" *ngIf='this.newUserAccess?.get("password")?.hasError("minlength")'>
+          Minimum length must 5 characters
+        </li>
+        <li class="hint" *ngIf='this.newUserAccess?.get("password")?.hasError("maxlength")'>
+          Maximum length allowed is 255 characters
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="col-lg-4 col-sm-12 col-md-6">
+  <div class="input-wrap">
+    <label for="Role">Role</label>
+    <ng-select formControlName='Role' id="Role" [dropdownPosition]='"bottom"' [items]="Roles" 
+               bindLabel="title" bindValue="code" style="padding-bottom: 0;">
+    </ng-select>
+    <ul class="hints" *ngIf='this.newUserAccess?.get("Role")?.invalid && (this.newUserAccess?.get("Role")?.touched || formSubmitted)'>
+      <li class="hint" *ngIf='this.newUserAccess?.get("Role")?.hasError("Role")'>
+        Required field
+      </li>
+    </ul>
+  </div>
+</div>
+  </div>
+
+<!-- 
+  <div class="row margin0 boxborder"> 
+    
+    <div class="col-12">
+      <ag-grid-angular #agGrid
+      style="width: 100%; height: 200px;"        
+        class="ag-theme-alpine"
+        [rowData]="rowData"
+        [columnDefs]="columnDefs"
+        >
+      </ag-grid-angular>
+   </div>
+</div>   -->
+  <!-- <div class="row margin0">     -->
+   
+    <!-- [disabled]='true'   -->
+    <div class="action-btn-wrap">
+    <button type="submit" (click)="submitNewOrder()" class="buttonBox" style="margin: auto;margin-bottom:25px;width: 100%;" 
+    
+            >
+      Add New User
+    </button>
+  </div>
+
+<!-- </div> -->
+  
+</form>

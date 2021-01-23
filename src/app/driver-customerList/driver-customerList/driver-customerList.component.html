@@ -1,0 +1,30 @@
+
+<div class="row">
+  <button *ngIf="UserDetails.RoleID=='1'" (click)="goBack()" class="buttonBox" style="float: left;margin: 10px auto 10px 25px;">Go Back</button>
+  <button (click)="LogOut()" class="buttonBox" style="margin: 10px 10px 10px auto;">Log Out</button>
+  <!-- <div class="box" style="float: right;">
+    <p>Log Out</p>
+  </div> -->
+</div>
+  <div class="row">
+    <div class="input-wrap" style="margin-left: 15px; margin-top: 15px;">      
+      <input type="text" id='comments' [(ngModel)]="txtSearch" (ngModelChange)="txtSearchChanged($event)" placeholder="Search keyword" style="margin: 10px;" >      
+    </div>
+  </div>
+
+<div class="row" *ngIf="filteredCustomerDetails.length<=0">
+  <h2 class="center">0 Records Found</h2>
+</div>
+<div class="row">
+  <div class="col-lg-4 col-sm-12 col-md-6" *ngFor="let option of filteredCustomerDetails" (click)="SelectCustomer(option)">
+    <div class="box">
+      <h5>Phone No: <strong>{{option.MobileNumber}}</strong></h5>
+      <p>Name: {{option.CustomerName}}</p>
+      <p>Address: {{option.Address}}</p>
+      
+      <p>Status: <strong [style.color]="option.Satus=='New' ? '#d81818' : 'rgb(4, 85, 4)' ">{{option.Satus=='New'? 'New' : 'Ready for pickup'}}</strong></p>
+      <p>Date of Purchase: {{option.DateOfPurchase | date}}</p>
+    </div>
+  </div>
+</div>
+

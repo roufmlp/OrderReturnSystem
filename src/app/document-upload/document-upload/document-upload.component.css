@@ -1,0 +1,572 @@
+form {
+  /* padding: 50px 0;
+  background: url('/assets/images/bg.svg') no-repeat center; */
+}
+.personalInfoTitle{
+  font-weight: bold;
+}
+.hint{
+  color: #bc0003;
+  font-size: 14px;
+  font-weight: thin;
+}
+
+.input-wrap{
+  width: 100%;
+  margin-top: 15px;
+}
+.input-wrap label{
+  width: 100%;
+  color: #2d2b2c;
+}
+.input-wrap input{
+  width: 100%;
+  border: 0;
+  color: #2d2b2c;
+  /* padding: 7px 0; */
+  background-color: transparent;
+  border-bottom: 1px solid #dadada;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 28px;
+  padding-bottom: 5px;
+}
+.input-wrap ng-select{
+  width: 100%;
+  border: 0;
+  color: #2d2b2c;
+  background-color: transparent;
+  border-bottom: 1px solid #dadada;
+  font-size: 20px;
+  line-height: 28px;
+  padding-bottom: 5px;
+}
+:host::ng-deep.ng-select.ng-select-single .ng-select-container .ng-value-container{
+  padding: 0;
+}
+:host::ng-deep.ng-select .ng-select-container .ng-value-container .ng-input>input{
+  padding: 0;
+}
+:host::ng-deep.ng-select .ng-select-container{
+  background-color: transparent !important;
+  border: none !important;
+}
+:host::ng-deep.ng-select.ng-select-opened>.ng-select-container {
+  background: transparent;
+  border: none;
+}
+:host::ng-deep.ng-dropdown-panel .ng-dropdown-panel-items{
+  max-height: 200px;
+}
+
+#nationality,#CountryofOrigin,#CurrentCountry,#CurrentlyResiding{
+  background-image:url(/assets/images/search.svg); 
+  background-repeat: no-repeat; 
+  background-position: 2px 3px;
+  background-size: 20px;
+  text-indent: 28px;
+}
+.radio-wrap{
+  display: flex;
+  margin-top: 35px; 
+}
+.radio-wrap label{
+  width: 104px;
+  height: 40px;
+  border-radius: 6px;
+  border: solid 1px #dadada;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.radio-wrap label:first-of-type{
+  margin-right: 12px;
+}
+.radio-wrap input{
+  display: none;
+}
+.radio-wrap input:checked + label{
+  background-color: #3c6cd6;
+  border: solid 1px #3c6cd6;
+  color: white;
+}
+
+h4 {
+  font-family: Corisande;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  color: #0b2e74;
+  margin: 0;
+}
+.title-descriptor{
+  font-size: 13px;
+  color: #697686;
+}
+
+.customCard {
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -15px rgba(0, 0, 0, 0.2), 1px -10px 30px -24px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border: solid 1px #ebebeb;
+}
+
+.customCard .dragPortion {
+  border-radius: 4px;
+  border: dashed 1px #9b9b9b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customCard .dragPortion span {
+  font-family: Corisande;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.1px;
+  text-align: center;
+  color: #9b9b9b;
+}
+
+.customCard button {
+  font-family: Corisande;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.78;
+  letter-spacing: -0.3px;
+  text-align: center;
+  color: #ffffff;
+}
+
+h5 {
+  font-family: Corisande;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.4px;
+  color: #0b2e74;
+}
+
+.addedFileList {
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: solid 2.5px #ff8800;
+}
+
+.addedFileList span {
+  font-family: Corisande;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+
+}
+
+.progress {
+  position: absolute;
+  bottom: -1px;
+  width: calc(100% + 2px);
+  border-radius: 4px;
+  background-color: #c9c9c9;
+  left: -1px;
+  display: none;
+  transition: 0.5s ease;
+}
+
+.progress.active {
+  display: block;
+}
+
+.progress div {
+  border-radius: 4px;
+  background-color: #ff8800;
+  height: 100%;
+}
+
+.progressBarAndDocListOnSmallDevices {
+
+}
+
+.progressBarAndDocListOnSmallDevices div.progressContainer {
+  position: relative;
+}
+
+.progressBarAndDocListOnSmallDevices div.col-6 {
+  height: 134px;
+}
+
+.progressBarAndDocListOnSmallDevices img.uploadedFile {
+  height: 100%;
+  width: 100%;
+}
+
+.progressBarAndDocListOnSmallDevices img.cancelFileBTN {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+}
+
+.modal.show .modal-dialog{
+  max-width: 500px;
+}
+
+
+
+.header{
+  font-weight: bold;
+  margin-bottom: 10px
+}
+
+.eid, .passport{
+  margin-top: 15px;
+  border-radius: 6px;
+  /* border: solid 1px #dddddd; */
+  /* background-color: #f fffff; */
+  padding-bottom: 30px;
+  margin-bottom: 10px;
+}
+.eid h6, .passport h6{
+  margin: 20px 0 10px 0px;
+  font-weight: bold;
+}
+
+.eid__wrap, .passport__wrap{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  
+}
+
+.eid__front, .eid__back, .passport__front, .passport__back{
+  position: relative;
+  text-align: center;
+}
+.eid__front, .passport__front{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.passport__front{
+  min-width: 150px;
+}
+.eid__back, .passport__back{
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.eid__title, .passport__title{
+  margin-top: 15px;
+  margin-bottom: 7px;
+  font-weight: bold;
+}
+.eid__frame, .passport__frame{
+  width: 100%;
+  border-radius: 4px;
+  /* border: solid 1px #ebebeb; */
+}
+.eid__hint, .passport__hint{
+  margin-top: 20px;
+  color: #3c6cd6;
+  margin-bottom: 0;
+}
+.passport{
+  margin-bottom: 40px;
+}
+.additional{
+  margin-top: 10px;
+  font-family: Corisande;
+  font-size: 12px;
+  line-height: 1.42;
+  letter-spacing: -0.2px;
+  color: #2d2b2c;
+}
+
+::ng-deep.upload-btn{
+  position: absolute;
+  background-color: none;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+::ng-deep.remove-image{
+  cursor: pointer;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+}
+.btn{
+  width: 100%;
+}
+.dontHave{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 1.59;
+  letter-spacing: -0.4px;
+  color: #3c6cd6;
+  text-decoration: underline;
+  border: 0;
+  background-color: transparent;
+}
+
+.upload-btn-trigger{
+  position: relative;
+  top: 0;
+  /* left: 50%; */
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.guide{
+  display: flex;
+  justify-content: space-between;
+}
+.guide div{
+  position: relative;
+  height: 85px;
+}
+.guide__hint{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+.guide__img{
+  height: 100%;
+  width: auto;
+}
+
+
+.modal-dialog {
+}
+
+.modal-content {
+}
+
+.modal-header {
+}
+
+.modal-header .modal-title {
+}
+
+.modal-header .header-content-wrap{
+}
+
+.modal-header .header-content-wrap h5 {
+}
+
+.modal-body {
+}
+
+.modal-body ul {
+}
+
+.modal-body li {
+}
+.modal-body li img {
+}
+
+.modal-dialog .modal-header img {
+}
+
+.modal-close-button {
+}
+.modal-footer .btn{
+  margin: 0;
+}
+
+
+
+/* 
+@media (max-width: 991.98px) {
+  h4, h5 {
+    letter-spacing: -0.5px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  h5 {
+    font-size: 17px;
+  }
+
+  .customCard h5 + button {
+    font-size: 15px;
+    line-height: 2.13;
+    letter-spacing: -0.2px;
+  }
+
+  .progress {
+    height: 6px;
+  }
+  .modal-dialog{
+    width: 90%;
+    max-width: 560px;
+    height: auto;
+  }
+  .modal-content img{
+    margin: 0 !important;
+  }
+  .modal-content .close{
+    height: 40px;
+    top: -50px;
+    right: 0;
+  }
+  .modal-body {
+    padding: 1rem !important;
+  }
+}
+
+.passport__wrap{
+  display: flex;
+  justify-content: center;   
+} */
+
+
+
+.box {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+  
+
+/* opacity: 0.7; */
+  transition: 0.3s;
+
+  min-height: 200px;
+  /* width: 50vw; */
+  margin: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+.box:hover{
+  /* cursor: pointer; */
+  /* opacity: 1 */
+  /* background-color: #ddd; */
+}
+.box:active{
+  /* cursor: pointer; */
+  /* opacity: 1 */
+  background-color: #aaa;
+}
+
+.buttonBox {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+float: right; border: 0; 
+/* margin-left: auto;  */
+/* margin-right: 25px; */
+margin: 10px 25px 10px auto;
+/* opacity: 0.7; */
+  transition: 0.3s;
+
+  /* min-height: 200px; */
+  /* width: 50vw; */
+  /* margin: 10px; */
+  background: #04a2b7;
+  border-radius: 5px;
+  padding: 10px;
+  color: #ffffff;
+}
+.buttonBox:hover{
+  cursor: pointer;
+  /* opacity: 1 */
+  background-color:#05C3DD;
+  border: 0;
+}
+.buttonBox:active{
+  /* cursor: pointer; */
+  /* opacity: 1 */
+  background-color: #048b9d;
+  border: 0 !important;
+}
+
+.buttonBoxRed {
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12)
+;
+
+/* float: right;  */
+border: 0; 
+/* margin-left: auto;  */
+/* margin-right: 25px; */
+margin: 0;
+/* opacity: 0.7; */
+  transition: 0.3s;
+
+  /* min-height: 200px; */
+  /* width: 50vw; */
+  /* margin: 10px; */
+  background: #ff4444;
+  border-radius: 5px;
+  padding: 10px;
+}
+.buttonBoxRed:hover{
+  cursor: pointer;
+  /* opacity: 1 */
+  background-color:#ff2222;
+  border: 0;
+}
+.buttonBoxRed:active{
+  /* cursor: pointer; */
+  /* opacity: 1 */
+  background-color:#ff1111;
+  border: 0 !important;
+}
+.imageWrap{
+  height: 200px;
+  width: 200px;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.margin0{
+  margin: 0;
+}
+.padding0{
+  padding: 0;
+}
+p{
+  margin-bottom: 5px !important;
+}

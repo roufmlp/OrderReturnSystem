@@ -1,0 +1,10 @@
+.top-progress-bar{
+  height: 4px;
+  width: 100%;
+}
+.progress{
+  background-image: linear-gradient(to left, #fad961, #f76b1c);
+  /* background-color: #2c2c2c; */
+  height: 100%;
+  border-radius: 0;
+}

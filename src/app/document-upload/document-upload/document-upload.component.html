@@ -1,0 +1,86 @@
+<div class="row">
+  
+  <button (click)="goBack()" class="buttonBox" style="float: left;margin: 10px auto 10px 15px;">Go Back</button>
+  <button (click)="LogOut()" class="buttonBox" style="margin: 10px 10px 10px auto;">Log Out</button>
+
+  </div>
+  <div class="row margin0" style="margin-top: 25px;">
+    <div class="col-12 padding0">
+      <h4 style="font-weight: bold;margin-bottom: 10px;">Product Details</h4>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 col-md-6">
+          
+        <p>Product Name: {{SelectedProduct.ProductName}}</p>
+        <p>Type: {{SelectedProduct.ProductType}}</p>
+        <p>Quantity: {{SelectedProduct.Quantity}}</p>
+        <p>Date of Purchase: {{SelectedCustomer.DateOfPurchase | date}}</p>
+
+        <!-- <div class="input-wrap">
+          <label for="returnReason">Reason for Return</label>
+          <input type="text" id='returnReason' placeholder="Please type the reason for return">          
+        </div> -->
+        <form class="form-signin" [formGroup]='docsUpload' name="form" #f="ngForm">
+        <div class="input-wrap">
+          <label for="returnReason">Reason for Return</label>
+          <input type="text" id='returnReason' formControlName="returnReason" placeholder="Please type the reason for return">
+          <ul class="hints" *ngIf='this.docsUpload?.get("returnReason")?.invalid && (this.docsUpload?.get("returnReason")?.touched || formSubmitted)'>
+            <li class="hint" *ngIf='this.docsUpload?.get("returnReason")?.hasError("required")'>
+              Required field
+            </li>
+            <li class="hint" *ngIf='this.docsUpload?.get("returnReason")?.hasError("maxlength")'>
+              Maximum length allowed is 255 characters
+            </li>
+          </ul>
+        </div>
+      </form>
+      
+      </div>
+
+        <div class="col-lg-6 col-sm-12 col-md-6 d-none d-sm-block">
+          <div class="imageWrap">
+            <img src="assets/images/{{SelectedProduct.Image}}">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<div class="eid"> 
+  <div class="eid__wrap">
+    <div class="eid__front">
+      <div class="eid__title">Pic 1</div>
+      <file-uploader #eidFrontFileUpload [base64]='true' [activeColor]="'orangered'" [baseColor]="'lightgray'"
+        [backgroundImg]="'assets/images/upload-pics.png'" (imageUploaded)="fileUploaded($event, 'pic01_')">
+      </file-uploader>
+      <img class="upload-btn-trigger" *ngIf="!eidFrontFileUpload.loaded" (click)='eidFrontFileUpload.uploadTrigger(eidFrontFileUpload.fileInput)'
+        src="assets/images/upload-btn-mobile-copy.svg" alt="+">
+      <!-- <p class='eid__hint' *ngIf='eidFrontUploaded'>uploaded</p> -->
+    </div>
+    <div class="eid__back">
+      <div class="eid__title">Pic 2</div>
+      <div class="eid__frame">
+        <file-uploader #eidBackFileUpload [base64]='true' [activeColor]="'orangered'" [baseColor]="'lightgray'"
+          [backgroundImg]="'assets/images/upload-pics.png'" (imageUploaded)="fileUploaded($event, 'pic02_')">
+        </file-uploader>
+        <img class="upload-btn-trigger" *ngIf="!eidBackFileUpload.loaded" (click)='eidBackFileUpload.uploadTrigger(eidBackFileUpload.fileInput)'
+          src="assets/images/upload-btn-mobile-copy.svg" alt="+">
+      </div>
+      <!-- <p class='eid__hint' *ngIf='eidBackUploaded'>uploaded</p> -->
+    </div>
+  </div>
+</div>
+
+
+
+<div class="action-btn-wrap">
+
+ 
+  <!-- <button (click)='submitDocumentUpload()' class="btn btn-orange--enabled">Submit</button> -->
+  
+  <button type="submit" (click)='submitDocumentUpload()' class="buttonBox" style="margin: auto;margin-bottom:25px;width: 100%;" [disabled]='false'
+            >
+      Submit
+    </button>
+</div>

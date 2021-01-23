@@ -1,0 +1,19 @@
+<div class="file-uploader-wrap">
+    <label class="uploader" ondragover="return false;" [class.loaded]="loaded" [style.outlineColor]="dragging ? activeColor : baseColor"
+    (dragenter)="handleDragEnter()" (dragleave)="handleDragLeave()" (drop)="handleDrop($event)">
+      
+      <i class="icon icon-upload" [style.color]="dragging
+         ? ((imageSrc.length>
+        0) ? overlayColor : activeColor)
+        : ((imageSrc.length > 0) ? overlayColor : baseColor)">
+      </i>
+    
+      <img [src]="imageSrc" *ngIf='loaded' (load)="handleImageLoad()" class='doc-img' [ngClass]="{'loaded': imageLoaded}"  />
+      <img [src]="backgroundImg | safe: 'resourceUrl'" *ngIf='!loaded'>
+      <input type="file" name="file" accept="image/*" #fileInput (click)="handleClick($event)"
+        (change)="handleInputChange($event)">
+    </label>
+    <img class="remove-image close-imageicon"  *ngIf="loaded" (click)="clearinput()" src="assets/images/delete-preview-icon.svg" alt="x">
+    
+</div>
+

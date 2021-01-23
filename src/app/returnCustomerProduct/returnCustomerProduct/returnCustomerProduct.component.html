@@ -1,0 +1,55 @@
+<!-- <form class="form-signin" [formGroup]='workDetailsForm' name="form" (submit)="submitWorkInformation()" #f="ngForm">
+  <div class="row">
+  <button (click)="LogOut()" class="buttonBox">Log Out</button>
+  </div>
+  <div class="row margin0">
+    <div class="col-12">
+      <h4 style="font-weight: bold;">Product Details</h4>
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 col-md-6">
+          
+        <p>Product Name: {{SelectedProduct.ProductName}}</p>
+        <p>Type: {{SelectedProduct.ProductType}}</p>
+        <p>Quantity: {{SelectedProduct.Quantity}}</p>
+        <p>Date of Purchase: {{SelectedCustomer.DateOfPurchase | date}}</p>
+
+        <div class="input-wrap">
+          <label for="returnReason">Reason for Return</label>
+          <input type="text" id='returnReason' formControlName="returnReason" placeholder="Please type the reason for return">
+          <ul class="hints"
+              *ngIf='this.personalDetailsForm?.get("returnReason")?.invalid && (this.personalDetailsForm?.get("returnReason")?.touched || formSubmitted)'>
+            <li class="hint" *ngIf='this.personalDetailsForm?.get("returnReason")?.hasError("required")'>
+              Required field
+            </li>
+            <li class="hint" *ngIf='this.personalDetailsForm?.get("returnReason")?.hasError("maxlength")'>
+              Maximum length allowed is 255 characters
+            </li>
+            <li class="hint" *ngIf='this.personalDetailsForm?.get("returnReason")?.hasError("onlyAlpabetCharsAllowed")'>
+              Special characters(e.g !@#$%^&*) are not allowed
+            </li>
+          </ul>
+        </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-12 col-md-6 d-sm-none d-md-block">
+          <div class="imageWrap">
+            <img src="assets/images/{{SelectedProduct.Pic}}">
+          </div>
+        </div>
+        
+      </div>
+
+        
+    </div>
+  </div>
+  
+  
+
+  <div class="action-btn-wrap">
+    <button type="submit" class="btn" [disabled]='false'
+            [ngClass]="{'btn-orange--enabled': true, 'btn-orange--disabled': false}">
+      Submit
+    </button>
+  </div>
+
+</form> -->

@@ -1,0 +1,11 @@
+<!-- <app-progress-bar></app-progress-bar> -->
+<app-loading></app-loading>
+
+<!-- <app-nav></app-nav> -->
+<div class="container-mobile">
+<!--<main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">-->
+<main>
+  <router-outlet #o="outlet"></router-outlet>
+</main>
+</div>
+
