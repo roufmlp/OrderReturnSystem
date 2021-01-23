@@ -1,6 +1,21 @@
 # OrderReturnSystem
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.8.
+Order Return System with multiple user access and document upload options, with mobile first approch.
+
+Credentials are listed below for different roles (Admin can add new user access)
+
+Admin username: admin/password: admin
+
+Driver: driver/driver
+
+Warehouse: warehouse/warehouse
+
+Finance: finance/finance
+
+Support, for adding new returns: support/support
+
+
+Front end code has been developed by Angular 6, backend code with asp.net MVC, and the database, Microsoft SQL Server.
 
 ## Development server
 
